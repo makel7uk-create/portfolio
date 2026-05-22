@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Резюме — Юрій Баранов · Технолог</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+  .wrapper { max-width: 680px; margin: 30px auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,53,148,0.12); }
+
+  .header { background: linear-gradient(135deg, #003594 0%, #0055c8 100%); padding: 40px 40px 32px; position: relative; overflow: hidden; }
+  .header::after { content: 'CV'; position: absolute; right: -10px; top: -20px; font-size: 160px; font-weight: 900; color: rgba(255,255,255,0.06); letter-spacing: -10px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+  .header-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; }
+  .logo-box { background: #fff; border-radius: 8px; padding: 7px 9px; display: flex; align-items: center; flex-shrink: 0; }
+  .header h1 { color: #fff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .header-role { color: rgba(255,255,255,0.85); font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+  .header-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; }
+  .header-meta span { color: rgba(255,255,255,0.75); font-size: 13px; }
+
+  /* SECTION */
+  .section { padding: 28px 40px; }
+  .section + .section { padding-top: 0; }
+  .section-divider { border: none; border-top: 1px solid #eef2f7; margin: 0 40px; }
+  .section-title { font-size: 12px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #003594; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid #c8d8ff; }
+
+  /* ABOUT */
+  .about-text { font-size: 15px; line-height: 1.75; color: #2d3748; }
+  .about-text strong { color: #003594; }
+
+  /* SKILLS */
+  .skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag { background: #e8f0ff; color: #003594; font-size: 12px; font-weight: 600; padding: 5px 13px; border-radius: 20px; border: 1px solid #c8d8ff; }
+
+  /* PORTFOLIO */
+  .portfolio-list { display: flex; flex-direction: column; gap: 14px; }
+  .portfolio-item { background: #f7faff; border: 1.5px solid #dce8ff; border-radius: 12px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start; }
+  .portfolio-icon { font-size: 28px; flex-shrink: 0; width: 44px; text-align: center; }
+  .portfolio-body h4 { font-size: 14px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+  .portfolio-body p { font-size: 13px; color: #5a6a85; line-height: 1.55; margin-bottom: 8px; }
+  .doc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .doc-tag { font-size: 10px; color: #003594; background: #e8f0ff; border-radius: 10px; padding: 2px 8px; font-weight: 600; }
+
+  /* EDUCATION */
+  .edu-item { margin-bottom: 20px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .edu-title { font-size: 14px; font-weight: 700; color: #1a1a2e; }
+  .edu-year { font-size: 13px; color: #003594; font-weight: 700; flex-shrink: 0; }
+  .edu-place { font-size: 13px; color: #5a6a85; margin-bottom: 6px; }
+  .edu-details { font-size: 13px; color: #5a6a85; line-height: 1.6; }
+
+  /* QUALITIES */
+  .qualities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .quality-item { display: flex; gap: 10px; align-items: flex-start; background: #f7faff; border: 1.5px solid #dce8ff; border-radius: 10px; padding: 12px 14px; }
+  .quality-icon { font-size: 16px; flex-shrink: 0; }
+  .quality-text { font-size: 13px; color: #2d3748; line-height: 1.4; }
+
+  /* LANGS */
+  .lang-row { display: flex; gap: 24px; }
+  .lang-item { }
+  .lang-name { font-size: 14px; font-weight: 700; color: #1a1a2e; margin-bottom: 2px; }
+  .lang-level { font-size: 13px; color: #5a6a85; }
+
+  /* CTA */
+  .cta { padding: 28px 40px; text-align: center; background: #f7faff; border-top: 1px solid #eef2f7; }
+  .cta p { font-size: 15px; color: #2d3748; margin-bottom: 20px; line-height: 1.6; }
+  .cta a { display: inline-block; background: #003594; color: #fff; text-decoration: none; font-weight: 700; font-size: 14px; padding: 13px 32px; border-radius: 30px; letter-spacing: 0.5px; }
+
+  /* FOOTER */
+  .footer { padding: 24px 40px; border-top: 1px solid #eef2f7; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-weight: 700; font-size: 14px; color: #1a1a2e; line-height: 1.5; }
+  .footer-contacts { font-size: 13px; color: #5a6a85; text-align: right; line-height: 1.8; }
+  .footer-contacts a { color: #003594; text-decoration: none; }
+
+  @media (max-width: 560px) {
+    .wrapper { margin: 0; border-radius: 0; }
+    .header, .section, .cta, .footer { padding-left: 24px; padding-right: 24px; }
+    .section-divider { margin: 0 24px; }
+    .qualities-grid { grid-template-columns: 1fr; }
+    .lang-row { flex-direction: column; gap: 12px; }
+    .footer { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-contacts { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div style="max-width:680px;margin:20px auto 0;padding:0 16px 8px;font-family:Segoe UI,Arial,sans-serif;">
+  <a href="index.html" style="color:#003594;text-decoration:none;font-size:13px;font-weight:600;">&#8592; Назад до портфоліо</a>
+</div>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="header-badge">Резюме · 2026</div>
+      <div class="logo-box">
+        <img src="https://2k.company/wp-content/themes/company/img/logo.svg" style="width:38px; height:38px; display:block;">
+      </div>
+    </div>
+    <h1>Юрій Баранов</h1>
+    <div class="header-role">R&D технолог-розробник · Косметика та нутрицевтика</div>
+    <div class="header-meta">
+      <span>📍 Хмельницький</span>
+      <span>✉️ makel7uk@gmail.com</span>
+    </div>
+  </div>
+
+  <!-- ПРО СЕБЕ -->
+  <div class="section">
+    <div class="section-title">Про себе</div>
+    <div class="about-text">
+      Інженер-технолог харчових виробництв з університетською хімічною освітою (<strong>7 дисциплін хімії</strong>). Самостійно за період війни освоїв косметичну хімію і розробив <strong>4 завершені продукти</strong> з повною технологічною документацією.<br><br>
+      Що я знаю на глибокому рівні:<br>
+      — Хімія інгредієнтів — INCI, механізми дії, сумісність, pH-стабільність<br>
+      — Типи емульсій (O/W, W/O, W/S), загусники, емульгатори — HLB система<br>
+      — ПАР: аніонні, катіонні, амфотерні, неіоногенні — що з чим не мішати і чому<br>
+      — Активні компоненти: пептиди, ретинол, АНА/ВНА, ніацинамід, центела — механізми і концентрації<br>
+      — Консерванти: Euxyl, феноксиетанол, Optiphen — підбір під pH і формулу<br>
+      — Регуляторика: ДСТУ, EU Cosmetics Regulation, INCI декларація, SDS<br>
+      — Аналіз ринку: тренди clean beauty, дерматологічна косметика, чоловічий догляд<br><br>
+      Поєдную академічну базу з практичним підходом розробника формул. Шукаю позицію технолога у виробничій компанії, де можу застосувати профільні знання хімії і рости як косметичний технолог.
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- КЛЮЧОВІ КОМПЕТЕНЦІЇ -->
+  <div class="section">
+    <div class="section-title">Ключові компетенції</div>
+    <div class="skills-list">
+      <span class="skill-tag">Розробка рецептур (емульсії, гелі, мила)</span>
+      <span class="skill-tag">Лабораторні протоколи</span>
+      <span class="skill-tag">Промислові розрахунки до 500 кг</span>
+      <span class="skill-tag">Підбір ПАР, емульгаторів, консервантів</span>
+      <span class="skill-tag">Контроль pH, в'язкість, стабільність</span>
+      <span class="skill-tag">AI-assisted R&D</span>
+      <span class="skill-tag">Аналіз косметичного ринку</span>
+      <span class="skill-tag">Технічна література (EN)</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ПОРТФОЛІО -->
+  <div class="section">
+    <div class="section-title">Портфоліо проектів</div>
+    <div class="portfolio-list">
+
+      <div class="portfolio-item">
+        <div class="portfolio-icon">💪</div>
+        <div class="portfolio-body">
+          <h4>Сила Чоловіка (Syla Cholovika)</h4>
+          <p>Wellness-гель для чоловіків. L-Аргінін, Женьшень, Epimedium — відновлення судинного тонусу.</p>
+          <div class="doc-tags">
+            <span class="doc-tag">Рецептура</span>
+            <span class="doc-tag">Протокол</span>
+            <span class="doc-tag">1 кг лаб.</span>
+            <span class="doc-tag">100 кг пром.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="portfolio-icon">🩹</div>
+        <div class="portfolio-body">
+          <h4>Відновлюючий Гель (Repair Gel)</h4>
+          <p>Антирубцевий гель. Алантоїн, гіалуронова кислота, центела азіатська — без стероїдів.</p>
+          <div class="doc-tags">
+            <span class="doc-tag">Рецептура</span>
+            <span class="doc-tag">Протокол</span>
+            <span class="doc-tag">Дерматол.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="portfolio-icon">🌿</div>
+        <div class="portfolio-body">
+          <h4>Ніжні Милі Ручки (Nizhni Myla Ruchky)</h4>
+          <p>Крем-бальзам O/W для рук. Масло какао, гіалуронат, алое вера — ніжна текстура.</p>
+          <div class="doc-tags">
+            <span class="doc-tag">Рецептура</span>
+            <span class="doc-tag">Протокол</span>
+            <span class="doc-tag">Стабільність</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" style="background: linear-gradient(135deg, #e8d8ff, #d8c4fc); border-color: #a888f0;">
+        <div class="portfolio-icon">🟣</div>
+        <div class="portfolio-body">
+          <h4>Ранковий Старт (Morning Nootropic Stick)</h4>
+          <p>Нутрицевтичне саше на щодень. Omega-3, Citicoline 250 мг, L-Theanine 200 мг, Mg glycinate. Розрахунок на промислову партію.</p>
+          <div class="doc-tags">
+            <span class="doc-tag">Рецептура</span>
+            <span class="doc-tag">Розрахунок 100 кг</span>
+            <span class="doc-tag">Специфікація</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ОСВІТА -->
+  <div class="section">
+    <div class="section-title">Освіта</div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-title">Інженер-технолог харчових виробництв</div>
+        <div class="edu-year">1998</div>
+      </div>
+      <div class="edu-place">Національний університет харчових технологій · м. Київ</div>
+      <div class="edu-details">
+        Хімічні дисципліни (9 курсів): фізична хімія, біохімія, аналітична хімія, органічна хімія, неорганічна хімія, колоїдна хімія, хімія органічних сполук та ін.
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-title">Косметична хімія (Платна освіта LABA)</div>
+        <div class="edu-year">2024 — дотепер</div>
+      </div>
+      <div class="edu-place">· профільна literatura</div>
+      <div class="edu-details">
+        Практична лабораторна робота, розробка та коригування формул, ДСТУ та ISO стандарти для косметичних продуктів, INCI-бази інгредієнтів.
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ОСОБИСТІ ЯКОСТІ -->
+  <div class="section">
+    <div class="section-title">Особисті якості</div>
+    <div class="qualities-grid">
+      <div class="quality-item">
+        <div class="quality-icon">📚</div>
+        <div class="quality-text">Висока мотивація до навчання і розвитку</div>
+      </div>
+      <div class="quality-item">
+        <div class="quality-icon">📋</div>
+        <div class="quality-text">Системний підхід — завжди з документацією</div>
+      </div>
+      <div class="quality-item">
+        <div class="quality-icon">🚀</div>
+        <div class="quality-text">Ініціативність — проекти запустив самостійно без наставника</div>
+      </div>
+      <div class="quality-item">
+        <div class="quality-icon">🤝</div>
+        <div class="quality-text">Готовність до роботи в команді та підпорядкування досвідченому технологу</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- МОВИ -->
+  <div class="section">
+    <div class="section-title">Мовні знання</div>
+    <div class="lang-row">
+      <div class="lang-item">
+        <div class="lang-name">Українська</div>
+        <div class="lang-level">Рідна</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name">Англійська</div>
+        <div class="lang-level">Технічне читання (стандарти, статті, INCI)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <p>Готовий до зустрічі та демонстрації портфоліо<br>в зручний для вас час.</p>
+    <a href="mailto:makel7uk@gmail.com?subject=Відповідь на резюме технолога">✉️ Написати відповідь</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-name">Юрій Баранов<br><span style="font-weight:400; font-size:13px; color:#5a6a85;">Технолог-розробник косметичних продуктів</span></div>
+    <div class="footer-contacts">
+      <a href="mailto:makel7uk@gmail.com">makel7uk@gmail.com</a><br>
+      📍 Хмельницький, Україна
+    </div>
+  </div>
+
+</div>
+<div style="max-width:680px;margin:0 auto;padding:12px 16px 24px;font-family:Segoe UI,Arial,sans-serif;">
+  <a href="index.html" style="color:#003594;text-decoration:none;font-size:13px;font-weight:600;">&#8592; Назад до портфоліо</a>
+</div>
+</body>
+</html>
