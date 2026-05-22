@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Юрій Пронько — R&D розробник · Портфоліо</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+
+  .wrapper { max-width: 720px; margin: 30px auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,53,148,0.12); }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, #003594 0%, #0055c8 100%); padding: 48px 48px 40px; position: relative; overflow: hidden; }
+  .header::after { content: 'R&D'; position: absolute; right: -10px; top: -20px; font-size: 140px; font-weight: 900; color: rgba(255,255,255,0.05); letter-spacing: -5px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+  .header-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; }
+  .logo-box { background: #fff; border-radius: 8px; padding: 7px 9px; display: flex; align-items: center; flex-shrink: 0; }
+  .header h1 { color: #fff; font-size: 28px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+  .header-sub { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.6; }
+
+  /* STATS */
+  .stats { display: flex; gap: 0; border-bottom: 1px solid #eef2f7; }
+  .stat { flex: 1; padding: 24px; text-align: center; border-right: 1px solid #eef2f7; }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-size: 30px; font-weight: 900; color: #003594; line-height: 1; }
+  .stat-label { font-size: 12px; color: #5a6a85; margin-top: 5px; line-height: 1.4; }
+
+  /* SECTION */
+  .section { padding: 32px 48px; }
+  .section + .section { padding-top: 0; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #0055c8; margin-bottom: 20px; }
+
+  /* ABOUT */
+  .about-text { font-size: 15.5px; line-height: 1.75; color: #2d3748; }
+  .about-text strong { color: #003594; }
+
+  /* SKILLS */
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .skill { background: #e8f0ff; color: #003594; font-size: 12px; font-weight: 600; padding: 5px 13px; border-radius: 20px; border: 1px solid #c8d8ff; }
+
+  /* PRODUCTS */
+  .products { padding: 0 48px 32px; }
+  .products-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .prod-card { background: #f7faff; border: 1.5px solid #dce8ff; border-radius: 12px; overflow: hidden; }
+  .prod-img { height: 120px; display: flex; align-items: center; justify-content: center; font-size: 48px; position: relative; }
+  .prod-img.dark { background: linear-gradient(135deg, #0d1b35, #1a3a7a); }
+  .prod-img.light { background: linear-gradient(135deg, #e8f4ff, #dbeeff); }
+  .prod-img.green { background: linear-gradient(135deg, #e8f7ee, #d0f0dc); }
+  .prod-badge { position: absolute; top: 8px; right: 8px; background: #003594; color: #fff; font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 20px; letter-spacing: 1px; }
+  .prod-badge.ready { background: #1a8a4a; }
+  .prod-body { padding: 14px 16px; }
+  .prod-body h4 { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px; }
+  .prod-body p { font-size: 12px; color: #5a6a85; line-height: 1.55; }
+  .prod-docs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+  .doc-tag { font-size: 10px; color: #003594; background: #e8f0ff; border-radius: 10px; padding: 2px 7px; font-weight: 600; }
+
+  /* ADVANTAGE */
+  .advantage { margin: 0 48px 32px; background: linear-gradient(135deg, #003594 0%, #0055c8 100%); border-radius: 12px; padding: 28px 32px; color: #fff; }
+  .advantage h3 { font-size: 12px; font-weight: 700; margin-bottom: 16px; opacity: 0.7; letter-spacing: 2px; text-transform: uppercase; }
+  .adv-items { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .adv-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 14px; }
+  .adv-num { font-size: 26px; font-weight: 900; color: #fff; line-height: 1; }
+  .adv-label { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 4px; line-height: 1.4; }
+
+  /* OFFER */
+  .offer-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .offer-card { background: #f7faff; border: 1.5px solid #dce8ff; border-radius: 12px; padding: 20px; }
+  .offer-card h4 { font-size: 14px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
+  .offer-card p { font-size: 13px; color: #5a6a85; line-height: 1.6; }
+  .offer-card ul { margin: 8px 0 0 16px; }
+  .offer-card ul li { font-size: 13px; color: #5a6a85; line-height: 1.7; }
+
+  /* CTA */
+  .cta { padding: 32px 48px; text-align: center; background: #f7faff; border-top: 1px solid #eef2f7; }
+  .cta-title { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
+  .cta-sub { font-size: 14px; color: #5a6a85; margin-bottom: 24px; line-height: 1.6; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: #003594; color: #fff; text-decoration: none; font-weight: 700; font-size: 14px; padding: 13px 30px; border-radius: 30px; }
+  .btn-secondary { display: inline-block; background: #fff; color: #003594; text-decoration: none; font-weight: 700; font-size: 14px; padding: 12px 30px; border-radius: 30px; border: 2px solid #003594; }
+
+  /* FOOTER */
+  .footer { padding: 24px 48px; border-top: 1px solid #eef2f7; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-weight: 700; font-size: 15px; color: #1a1a2e; }
+  .footer-contacts { font-size: 13px; color: #5a6a85; text-align: right; line-height: 1.8; }
+  .footer-contacts a { color: #003594; text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .wrapper { margin: 0; border-radius: 0; }
+    .header, .section, .products, .advantage, .cta, .footer { padding-left: 24px; padding-right: 24px; }
+    .advantage { margin: 0 24px 28px; }
+    .products { padding-left: 24px; padding-right: 24px; }
+    .products-grid { grid-template-columns: 1fr; }
+    .adv-items { grid-template-columns: 1fr 1fr; }
+    .offer-cards { grid-template-columns: 1fr; }
+    .stats { flex-wrap: wrap; }
+    .stat { min-width: 50%; }
+    .footer { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-contacts { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="header-badge">R&D Портфоліо · 2026</div>
+      <div class="logo-box">
+        <img src="https://2k.company/wp-content/themes/company/img/logo.svg" style="width:38px; height:38px; display:block;">
+      </div>
+    </div>
+    <h1>Юрій Пронько<br>R&D розробник</h1>
+    <div class="header-sub">Косметичні та нутрицевтичні продукти · Хмельницький<br>Рецептура + повна документація за 2–3 дні</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">готові продукти<br>з документацією</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7</div>
+      <div class="stat-label">хімічних дисциплін<br>університет</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2–3</div>
+      <div class="stat-label">дні на нову формулу<br>з AI-інструментами</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">готова технічна<br>документація</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="section-title">Про мене</div>
+    <div class="about-text">
+      Інженер-технолог з університетською хімічною базою — <strong>колоїдна хімія, органічна хімія, технологія косметичних засобів</strong> та ще 4 профільних дисципліни. Розробляю рецептури для косметичних та нутрицевтичних продуктів із повним пакетом технологічної документації.<br><br>
+      Використовую сучасні AI-інструменти для прискорення R&D-циклу: нова формула від концепції до готового протоколу — за <strong>2–3 робочі дні</strong>. Слідкую за глобальними трендами Euromonitor, Innova Market Insights, INCI-бази інгредієнтів.
+    </div>
+    <div class="skills">
+      <span class="skill">Рецептури O/W та W/O</span>
+      <span class="skill">Лабораторні протоколи</span>
+      <span class="skill">Промислові розрахунки</span>
+      <span class="skill">INCI / Safety</span>
+      <span class="skill">Нутрицевтика</span>
+      <span class="skill">Дерматологічний профіль</span>
+      <span class="skill">ТЕО продукту</span>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="section" style="padding-bottom: 8px;">
+    <div class="section-title">Портфоліо розробок</div>
+  </div>
+  <div class="products">
+    <div class="products-grid">
+
+      <!-- PRODUCT 1 -->
+      <div class="prod-card">
+        <div class="prod-img dark">
+          💪
+          <div class="prod-badge ready">ГОТОВО</div>
+        </div>
+        <div class="prod-body">
+          <h4>Syla Cholovika</h4>
+          <p>Wellness-гель для чоловіків. L-Аргінін, Женьшень, Epimedium — відновлення судинного тонусу.</p>
+          <div class="prod-docs">
+            <span class="doc-tag">Рецептура</span>
+            <span class="doc-tag">Протокол</span>
+            <span class="doc-tag">100 кг</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="prod-card">
+        <div class="prod-img light">
+          🧴
+          <div class="prod-badge ready">ГОТОВО</div>
+        </div>
+        <div class="prod-body">
+          <h4>Repair Gel</h4>
+          <p>Антирубцевий гель. Алантоїн, гіалуронова кислота, центела азіатська — без стероїдів.</p>
+          <div class="prod-docs">
+            <span class="doc-tag">Рецептура</span>
+            <span class="doc-tag">Протокол</span>
+            <span class="doc-tag">Дерматол.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="prod-card">
+        <div class="prod-img green">
+          🌿
+          <div class="prod-badge ready">ГОТОВО</div>
+        </div>
+        <div class="prod-body">
+          <h4>Nizhni Myla Ruchky</h4>
+          <p>Крем-бальзам O/W для рук. Масло какао, гіалуронат, алое вера — ніжна текстура.</p>
+          <div class="prod-docs">
+            <span class="doc-tag">Рецептура</span>
+            <span class="doc-tag">Протокол</span>
+            <span class="doc-tag">Стабільність</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ADVANTAGE -->
+  <div class="advantage">
+    <h3>Що отримує роботодавець</h3>
+    <div class="adv-items">
+      <div class="adv-item">
+        <div class="adv-num">2–3</div>
+        <div class="adv-label">дні на нову формулу</div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-num">0</div>
+        <div class="adv-label">витрат на старт — тестова формула безкоштовно</div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-num">100 кг</div>
+        <div class="adv-label">розрахунок на промислову партію</div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-num">AI</div>
+        <div class="adv-label">інструменти в R&D процесі</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER -->
+  <div class="section">
+    <div class="section-title">Що пропоную 2К</div>
+    <div class="offer-cards">
+      <div class="offer-card">
+        <h4>🧪 Нові продуктові лінійки</h4>
+        <ul>
+          <li>Догляд-косметика під Dallas / Galax</li>
+          <li>Чоловічі лінійки (Men's Care)</li>
+          <li>Антирубцеві та дерматологічні засоби</li>
+        </ul>
+      </div>
+      <div class="offer-card">
+        <h4>⚡ Wellness B2B напрямок</h4>
+        <ul>
+          <li>Ранкові стіки з адаптогенами</li>
+          <li>Корпоративні саше-формати</li>
+          <li>Ніша без локальних конкурентів</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="cta-title">Готовий до зустрічі або дзвінка</div>
+    <div class="cta-sub">Розроблю одну тестову формулу під ваш бренд безкоштовно —<br>без підписань і без умов. Просто щоб показати рівень роботи.</div>
+    <div class="cta-buttons">
+      <a href="tel:+380974841187" class="btn-primary">📞 +38 097 484-1187</a>
+      <a href="mailto:makel7uk@gmail.com" class="btn-secondary">✉️ makel7uk@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-name">Юрій Пронько · R&D розробник</div>
+    <div class="footer-contacts">
+      <a href="tel:+380974841187">+38 097 484-1187</a><br>
+      <a href="mailto:makel7uk@gmail.com">makel7uk@gmail.com</a><br>
+      Хмельницький, Україна
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
