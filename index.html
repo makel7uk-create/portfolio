@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Юрій Пронько — R&D розробник · Портфоліо</title>
+<title>Юрій Володимирович — R&D розробник · Портфоліо</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
@@ -80,8 +80,16 @@
   .btn-secondary { display: inline-block; background: #fff; color: #003594; text-decoration: none; font-weight: 700; font-size: 14px; padding: 12px 30px; border-radius: 30px; border: 2px solid #003594; }
 
   /* FOOTER */
+  /* LETTERS */
+  .letters-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .letter-card { display: flex; align-items: center; gap: 14px; background: #f7faff; border: 1.5px solid #dce8ff; border-radius: 12px; padding: 16px 18px; text-decoration: none; color: inherit; transition: border-color .2s; }
+  .letter-card:hover { border-color: #003594; }
+  .letter-num { font-size: 22px; font-weight: 900; color: #003594; min-width: 28px; opacity: .35; }
+  .letter-date { font-size: 11px; color: #5a6a85; margin-bottom: 3px; }
+  .letter-title { font-size: 12.5px; font-weight: 600; color: #1a1a2e; line-height: 1.4; }
+
   .footer { padding: 24px 48px; border-top: 1px solid #eef2f7; display: flex; justify-content: space-between; align-items: center; }
-  .footer-name { font-weight: 700; font-size: 15px; color: #1a1a2e; }
+  .footer-name { font-weight: 700; font-size: 14px; color: #1a1a2e; line-height: 1.5; }
   .footer-contacts { font-size: 13px; color: #5a6a85; text-align: right; line-height: 1.8; }
   .footer-contacts a { color: #003594; text-decoration: none; }
 
@@ -111,8 +119,8 @@
         <img src="https://2k.company/wp-content/themes/company/img/logo.svg" style="width:38px; height:38px; display:block;">
       </div>
     </div>
-    <h1>Юрій Пронько<br>R&D розробник</h1>
-    <div class="header-sub">Косметичні та нутрицевтичні продукти · Хмельницький<br>Рецептура + повна документація за 2–3 дні</div>
+    <h1>Юрій Володимирович<br>R&D розробник</h1>
+    <div class="header-sub">Косметичні та нутрицевтичні продукти · Хмельницький<br>Рецептура + повна документація за 2–3 дні для тестового виготовлення 1 кг і на 100 кг промислового.</div>
   </div>
 
   <!-- STATS -->
@@ -127,7 +135,7 @@
     </div>
     <div class="stat">
       <div class="stat-num">2–3</div>
-      <div class="stat-label">дні на нову формулу<br>з AI-інструментами</div>
+      <div class="stat-label">дні на нову формулу</div>
     </div>
     <div class="stat">
       <div class="stat-num">100%</div>
@@ -140,7 +148,7 @@
     <div class="section-title">Про мене</div>
     <div class="about-text">
       Інженер-технолог з університетською хімічною базою — <strong>колоїдна хімія, органічна хімія, технологія косметичних засобів</strong> та ще 4 профільних дисципліни. Розробляю рецептури для косметичних та нутрицевтичних продуктів із повним пакетом технологічної документації.<br><br>
-      Використовую сучасні AI-інструменти для прискорення R&D-циклу: нова формула від концепції до готового протоколу — за <strong>2–3 робочі дні</strong>. Слідкую за глобальними трендами Euromonitor, Innova Market Insights, INCI-бази інгредієнтів.
+      Використовую сучасні методи для прискорення R&D-циклу: нова формула від концепції до готового протоколу — за <strong>2–3 робочі дні</strong>. Слідкую за глобальними трендами Euromonitor, Innova Market Insights, INCI-бази інгредієнтів.
     </div>
     <div class="skills">
       <span class="skill">Рецептури O/W та W/O</span>
@@ -167,12 +175,13 @@
           <div class="prod-badge ready">ГОТОВО</div>
         </div>
         <div class="prod-body">
-          <h4>Syla Cholovika</h4>
+          <h4>Сила Чоловіка (Syla Cholovika)</h4>
           <p>Wellness-гель для чоловіків. L-Аргінін, Женьшень, Epimedium — відновлення судинного тонусу.</p>
           <div class="prod-docs">
             <span class="doc-tag">Рецептура</span>
             <span class="doc-tag">Протокол</span>
-            <span class="doc-tag">100 кг</span>
+            <span class="doc-tag">1 кг лаб.</span>
+            <span class="doc-tag">100 кг пром.</span>
           </div>
         </div>
       </div>
@@ -180,11 +189,21 @@
       <!-- PRODUCT 2 -->
       <div class="prod-card">
         <div class="prod-img light">
-          🧴
+          <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="4" width="3" height="10" fill="#003594" rx="1.5"/>
+            <rect x="14" y="3" width="15" height="5" fill="#0044b8" rx="2.5"/>
+            <rect x="10" y="5" width="6" height="2.5" fill="#0055c8" rx="1.2"/>
+            <rect x="13" y="14" width="17" height="24" fill="#4a80e8" rx="5"/>
+            <rect x="16" y="11" width="11" height="5" fill="#3a70d8" rx="2"/>
+            <rect x="14" y="20" width="15" height="14" fill="#003594" rx="2"/>
+            <text x="21.5" y="29" font-family="Arial Black,Arial" font-size="6" font-weight="900" fill="white" text-anchor="middle">2К</text>
+            <rect x="13" y="14" width="4" height="24" fill="rgba(255,255,255,0.2)" rx="5"/>
+            <rect x="14" y="38" width="15" height="3" fill="#3a70d8" rx="1.5"/>
+          </svg>
           <div class="prod-badge ready">ГОТОВО</div>
         </div>
         <div class="prod-body">
-          <h4>Repair Gel</h4>
+          <h4>Відновлюючий Гель (Repair Gel)</h4>
           <p>Антирубцевий гель. Алантоїн, гіалуронова кислота, центела азіатська — без стероїдів.</p>
           <div class="prod-docs">
             <span class="doc-tag">Рецептура</span>
@@ -201,7 +220,7 @@
           <div class="prod-badge ready">ГОТОВО</div>
         </div>
         <div class="prod-body">
-          <h4>Nizhni Myla Ruchky</h4>
+          <h4>Ніжні Милі Ручки (Nizhni Myla Ruchky)</h4>
           <p>Крем-бальзам O/W для рук. Масло какао, гіалуронат, алое вера — ніжна текстура.</p>
           <div class="prod-docs">
             <span class="doc-tag">Рецептура</span>
@@ -231,8 +250,8 @@
         <div class="adv-label">розрахунок на промислову партію</div>
       </div>
       <div class="adv-item">
-        <div class="adv-num">AI</div>
-        <div class="adv-label">інструменти в R&D процесі</div>
+        <div class="adv-num">1 кг</div>
+        <div class="adv-label">розрахунок на лабораторне виробництво</div>
       </div>
     </div>
   </div>
@@ -260,6 +279,21 @@
     </div>
   </div>
 
+  <!-- LETTERS -->
+  <div class="section">
+    <div class="section-title">Листи до компанії 2К</div>
+    <div class="letters-grid">
+      <a href="letter_01.html" class="letter-card"><div class="letter-num">01</div><div><div class="letter-date">22 травня</div><div class="letter-title">R&D розробник — нові продукти для лінійки 2К</div></div></a>
+      <a href="letter_02.html" class="letter-card"><div class="letter-num">02</div><div><div class="letter-date">26 травня</div><div class="letter-title">Портфоліо: 3 готові формули косметичних продуктів</div></div></a>
+      <a href="letter_03.html" class="letter-card"><div class="letter-num">03</div><div><div class="letter-date">29 травня</div><div class="letter-title">Нова формула під бренд Dallas — готова до тестування</div></div></a>
+      <a href="letter_04.html" class="letter-card"><div class="letter-num">04</div><div><div class="letter-date">2 червня</div><div class="letter-title">Ринкові ніші яких немає у 2К, але є у конкурентів</div></div></a>
+      <a href="letter_05.html" class="letter-card"><div class="letter-num">05</div><div><div class="letter-date">5 червня</div><div class="letter-title">Прошу 20 хвилин — R&D розробник</div></div></a>
+      <a href="letter_06.html" class="letter-card"><div class="letter-num">06</div><div><div class="letter-date">9 червня</div><div class="letter-title">Готовий розробити тестову формулу безкоштовно</div></div></a>
+      <a href="letter_07.html" class="letter-card"><div class="letter-num">07</div><div><div class="letter-date">12 червня</div><div class="letter-title">Готовий до будь-якого формату знайомства</div></div></a>
+      <a href="letter_08.html" class="letter-card"><div class="letter-num">08</div><div><div class="letter-date">16 червня</div><div class="letter-title">Підсумок пропозиції — Юрій Володимирович</div></div></a>
+    </div>
+  </div>
+
   <!-- CTA -->
   <div class="cta">
     <div class="cta-title">Готовий до зустрічі або дзвінка</div>
@@ -272,7 +306,7 @@
 
   <!-- FOOTER -->
   <div class="footer">
-    <div class="footer-name">Юрій Пронько · R&D розробник</div>
+    <div class="footer-name">Юрій Володимирович · R&D розробник</div>
     <div class="footer-contacts">
       <a href="tel:+380974841187">+38 097 484-1187</a><br>
       <a href="mailto:makel7uk@gmail.com">makel7uk@gmail.com</a><br>
