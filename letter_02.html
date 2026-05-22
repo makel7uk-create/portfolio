@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лист #2 — Портфоліо: 3 готові формули</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+  .wrapper { max-width: 680px; margin: 30px auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,53,148,0.12); }
+  .header { background: linear-gradient(135deg, #003594 0%, #0055c8 100%); padding: 40px 40px 32px; position: relative; overflow: hidden; }
+  .header::after { content: '2K'; position: absolute; right: -10px; top: -20px; font-size: 160px; font-weight: 900; color: rgba(255,255,255,0.06); letter-spacing: -10px; }
+  .header-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 700; line-height: 1.3; }
+  .header p { color: rgba(255,255,255,0.75); font-size: 15px; margin-top: 8px; }
+  .intro { padding: 36px 40px 24px; border-bottom: 1px solid #eef2f7; }
+  .intro p { font-size: 15.5px; line-height: 1.75; color: #2d3748; }
+  .intro strong { color: #003594; }
+  .section { padding: 28px 40px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #0055c8; margin-bottom: 18px; }
+  .portfolio { padding: 0 40px 28px; }
+  .portfolio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .portfolio-card { background: #f7faff; border: 1.5px solid #dce8ff; border-radius: 12px; overflow: hidden; }
+  .p-img-area { height: 130px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .p-card-body { padding: 14px 16px; }
+  .p-card-body h4 { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 5px; }
+  .p-card-body p { font-size: 12px; color: #5a6a85; line-height: 1.55; }
+  .doc-tag { display: inline-block; margin-top: 8px; background: #e8f0ff; color: #003594; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 10px; margin-right: 4px; }
+  .advantage { margin: 0 40px 28px; background: linear-gradient(135deg, #003594 0%, #0055c8 100%); border-radius: 12px; padding: 24px 28px; color: #fff; }
+  .advantage h3 { font-size: 14px; font-weight: 700; margin-bottom: 12px; opacity: 0.85; letter-spacing: 1px; text-transform: uppercase; }
+  .advantage-items { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .adv-item { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 14px; }
+  .adv-item .num { font-size: 24px; font-weight: 900; color: #fff; line-height: 1; }
+  .adv-item .label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+  .cta { padding: 28px 40px; text-align: center; background: #f7faff; }
+  .cta p { font-size: 15px; color: #2d3748; margin-bottom: 20px; line-height: 1.6; }
+  .cta a { display: inline-block; background: #003594; color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px 36px; border-radius: 30px; letter-spacing: 0.5px; }
+  .footer { padding: 24px 40px; border-top: 1px solid #eef2f7; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-weight: 700; font-size: 15px; color: #1a1a2e; }
+  .footer-contacts { font-size: 13px; color: #5a6a85; text-align: right; line-height: 1.8; }
+  .footer-contacts a { color: #003594; text-decoration: none; }
+  @media (max-width: 560px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .advantage-items { grid-template-columns: 1fr 1fr; }
+    .wrapper { margin: 0; border-radius: 0; }
+    .header, .intro, .section, .portfolio, .cta, .footer { padding-left: 24px; padding-right: 24px; }
+    .advantage { margin: 0 24px 28px; }
+    .footer { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-contacts { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+      <div class="header-badge">Лист #2 · 26.05.2026</div>
+      <div style="background:#fff; border-radius:8px; padding:7px 9px; display:flex; align-items:center; flex-shrink:0;">
+        <img src="https://2k.company/wp-content/themes/company/img/logo.svg" style="width:38px; height:38px; display:block;">
+      </div>
+    </div>
+    <h1>Три готові продукти<br>з повною документацією</h1>
+    <p>Рецептури · Лабораторні протоколи · Промислові розрахунки</p>
+  </div>
+
+  <div class="intro">
+    <p>Доброго дня, <strong>Миколо Миколайовичу!</strong><br><br>
+    У попередньому листі я окреслив напрямки — сьогодні хочу показати конкретику. За останній рік я розробив три продукти з повним пакетом технологічної документації, готовим до виробничого розгляду.</p>
+  </div>
+
+  <div class="section" style="padding-bottom:8px;">
+    <div class="section-title">Портфоліо розробок</div>
+  </div>
+  <div class="portfolio">
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card">
+        <div class="p-img-area" style="background:#0d1b35; padding:0;">
+          <svg width="100%" height="130" viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1b35"/><stop offset="100%" stop-color="#1a3a7a"/></linearGradient>
+              <linearGradient id="bot1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c8d8f0"/><stop offset="100%" stop-color="#e0ecff"/></linearGradient>
+            </defs>
+            <rect width="290" height="130" fill="url(#bg1)"/>
+            <rect x="163" y="12" width="4" height="18" fill="#d0dff5" rx="2"/>
+            <ellipse cx="165" cy="12" rx="10" ry="5" fill="#b8ccee"/>
+            <rect x="158" y="8" width="14" height="6" fill="#c8d8f4" rx="3"/>
+            <rect x="150" y="30" width="30" height="72" fill="url(#bot1)" rx="8"/>
+            <rect x="155" y="26" width="20" height="8" fill="#d4e4f8" rx="4"/>
+            <rect x="152" y="42" width="26" height="48" fill="#003594" rx="4"/>
+            <text x="165" y="63" font-family="Arial Black,Arial" font-size="11" font-weight="900" fill="white" text-anchor="middle">2К</text>
+            <line x1="155" y1="68" x2="175" y2="68" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
+            <text x="165" y="80" font-family="Arial" font-size="7" fill="rgba(255,255,255,0.8)" text-anchor="middle">WELLNESS</text>
+            <rect x="152" y="30" width="7" height="72" fill="rgba(255,255,255,0.12)" rx="8"/>
+            <text x="75" y="44" font-family="Arial Black,Arial" font-size="14" font-weight="900" fill="white" text-anchor="middle">Syla</text>
+            <text x="75" y="61" font-family="Arial Black,Arial" font-size="14" font-weight="900" fill="white" text-anchor="middle">Cholovika</text>
+            <line x1="30" y1="67" x2="120" y2="67" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+            <text x="75" y="81" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">Wellness-гель</text>
+            <text x="75" y="95" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.45)" text-anchor="middle">Курс 8 тижнів</text>
+          </svg>
+        </div>
+        <div class="p-card-body">
+          <h4>Syla Cholovika — Wellness-гель</h4>
+          <p>L-Аргінін 5%, Женьшень, Epimedium. Курсовий топічний гель, відновлення судинного тонусу.</p>
+          <span class="doc-tag">Рецептура</span><span class="doc-tag">Lab protocol</span><span class="doc-tag">100 кг</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="p-img-area" style="background:#0a2e1a; padding:0;">
+          <svg width="100%" height="130" viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a2e1a"/><stop offset="100%" stop-color="#0f5030"/></linearGradient>
+              <linearGradient id="tube2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#c8f0dc"/><stop offset="100%" stop-color="#e8fff2"/></linearGradient>
+            </defs>
+            <rect width="290" height="130" fill="url(#bg2)"/>
+            <ellipse cx="212" cy="65" rx="12" ry="12" fill="#d8f4e8"/>
+            <rect x="148" y="53" width="64" height="24" fill="url(#tube2)"/>
+            <rect x="142" y="51" width="12" height="28" fill="#1a8a4a" rx="4"/>
+            <rect x="153" y="55" width="55" height="20" fill="#0d5c2a" rx="2"/>
+            <text x="180" y="63" font-family="Arial Black,Arial" font-size="8" font-weight="900" fill="white" text-anchor="middle">2К</text>
+            <text x="180" y="73" font-family="Arial" font-size="6.5" fill="rgba(255,255,255,0.8)" text-anchor="middle">REPAIR GEL</text>
+            <rect x="148" y="53" width="64" height="6" fill="rgba(255,255,255,0.2)" rx="2"/>
+            <text x="68" y="44" font-family="Arial Black,Arial" font-size="15" font-weight="900" fill="white" text-anchor="middle">Repair</text>
+            <text x="68" y="62" font-family="Arial Black,Arial" font-size="15" font-weight="900" fill="#4ade80" text-anchor="middle">Gel</text>
+            <line x1="20" y1="68" x2="116" y2="68" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <text x="68" y="82" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.65)" text-anchor="middle">Антирубцевий гель</text>
+          </svg>
+        </div>
+        <div class="p-card-body">
+          <h4>Repair Gel — Антирубцевий гель</h4>
+          <p>Алантоїн, гіалуронова кислота, центела азіатська. Дерматологічний профіль, без стероїдів.</p>
+          <span class="doc-tag">Рецептура</span><span class="doc-tag">Lab protocol</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="p-img-area" style="background:#2a1a08; padding:0;">
+          <svg width="100%" height="130" viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2a1a08"/><stop offset="100%" stop-color="#5a3010"/></linearGradient>
+              <linearGradient id="jar3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f5e6d0"/><stop offset="100%" stop-color="#fff8f0"/></linearGradient>
+            </defs>
+            <rect width="290" height="130" fill="url(#bg3)"/>
+            <rect x="147" y="32" width="52" height="14" fill="#c8a060" rx="5"/>
+            <rect x="150" y="34" width="46" height="10" fill="#d4aa70" rx="4"/>
+            <text x="173" y="43" font-family="Arial" font-size="7" fill="#4a2a00" text-anchor="middle" font-weight="700">2К</text>
+            <rect x="145" y="46" width="56" height="52" fill="url(#jar3)" rx="6"/>
+            <rect x="148" y="52" width="50" height="38" fill="#5a3010" rx="3"/>
+            <text x="173" y="68" font-family="Arial" font-size="8" font-weight="900" fill="#f0c878" text-anchor="middle">Nizhni</text>
+            <text x="173" y="79" font-family="Arial" font-size="7" fill="rgba(255,255,255,0.8)" text-anchor="middle">Myla Ruchky</text>
+            <rect x="145" y="46" width="10" height="52" fill="rgba(255,255,255,0.12)" rx="6"/>
+            <text x="70" y="44" font-family="Arial Black,Arial" font-size="13" font-weight="900" fill="white" text-anchor="middle">Nizhni</text>
+            <text x="70" y="60" font-family="Arial Black,Arial" font-size="13" font-weight="900" fill="#f0c060" text-anchor="middle">Myla Ruchky</text>
+            <line x1="18" y1="66" x2="122" y2="66" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <text x="70" y="80" font-family="Arial" font-size="10" fill="rgba(255,255,255,0.65)" text-anchor="middle">Крем-бальзам для рук</text>
+          </svg>
+        </div>
+        <div class="p-card-body">
+          <h4>Nizhni Myla Ruchky — Крем-бальзам</h4>
+          <p>O/W емульсія: масло какао, гіалуронат, алое вера. 3-рівнева система зволоження.</p>
+          <span class="doc-tag">Рецептура</span><span class="doc-tag">Lab protocol</span>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="p-img-area" style="background:#1a0d30; padding:0;">
+          <svg width="100%" height="130" viewBox="0 0 290 130" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a0d30"/><stop offset="100%" stop-color="#3d1a6e"/></linearGradient>
+              <linearGradient id="sach4" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#c8a8f8"/><stop offset="100%" stop-color="#9060e0"/></linearGradient>
+            </defs>
+            <rect width="290" height="130" fill="url(#bg4)"/>
+            <circle cx="230" cy="40" r="30" fill="rgba(140,60,240,0.1)"/>
+            <rect x="160" y="20" width="28" height="88" fill="url(#sach4)" rx="6"/>
+            <rect x="163" y="32" width="22" height="60" fill="rgba(30,0,80,0.6)" rx="3"/>
+            <text x="174" y="55" font-family="Arial Black,Arial" font-size="11" font-weight="900" fill="white" text-anchor="middle">2К</text>
+            <line x1="165" y1="59" x2="183" y2="59" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+            <text x="174" y="70" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.75)" text-anchor="middle">MORNING</text>
+            <text x="174" y="79" font-family="Arial" font-size="6" fill="rgba(255,255,255,0.75)" text-anchor="middle">NOOTROPIC</text>
+            <rect x="160" y="20" width="7" height="88" fill="rgba(255,255,255,0.1)" rx="6"/>
+            <rect x="196" y="28" width="24" height="80" fill="#a878e8" rx="5" opacity="0.5"/>
+            <text x="72" y="42" font-family="Arial Black,Arial" font-size="12" font-weight="900" fill="white" text-anchor="middle">Morning</text>
+            <text x="72" y="58" font-family="Arial Black,Arial" font-size="12" font-weight="900" fill="#c084fc" text-anchor="middle">Nootropic</text>
+            <text x="72" y="74" font-family="Arial Black,Arial" font-size="12" font-weight="900" fill="white" text-anchor="middle">Stick</text>
+            <line x1="16" y1="80" x2="128" y2="80" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <text x="72" y="94" font-family="Arial" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle">Citicoline · L-Theanine</text>
+          </svg>
+        </div>
+        <div class="p-card-body">
+          <h4>Morning Nootropic Stick</h4>
+          <p>Omega-3 · Citicoline 250мг · L-Theanine 200мг · Mg glycinate. Саше на щодень.</p>
+          <span class="doc-tag">Рецептура</span><span class="doc-tag">Розрахунок 100 кг</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="advantage">
+    <h3>Документація по кожному продукту</h3>
+    <div class="advantage-items">
+      <div class="adv-item">
+        <div class="num">✓</div>
+        <div class="label">Рецептура з % по кожному інгредієнту</div>
+      </div>
+      <div class="adv-item">
+        <div class="num">✓</div>
+        <div class="label">Лабораторний протокол виготовлення</div>
+      </div>
+      <div class="adv-item">
+        <div class="num">✓</div>
+        <div class="label">Розрахунок на промислову партію 100 кг</div>
+      </div>
+      <div class="adv-item">
+        <div class="num">✓</div>
+        <div class="label">Список постачальників інгредієнтів</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <p>По кожному продукту — готовий надати повний пакет документів для розгляду вашим виробничим відділом.</p>
+    <a href="mailto:makel7uk@gmail.com?subject=Відповідь на пропозицію технолога">Написати відповідь</a>
+  </div>
+
+  <div class="footer">
+    <div class="footer-name">Юрій Володимирович<br><span style="font-weight:400; font-size:13px; color:#5a6a85;">R&D розробник · Косметика та нутрицевтика</span></div>
+    <div class="footer-contacts">
+      📱 +38097484-1187<br>
+      <a href="mailto:makel7uk@gmail.com">makel7uk@gmail.com</a><br>
+      📍 Хмельницький
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

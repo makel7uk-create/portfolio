@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лист #5 — Прошу 20 хвилин</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+  .wrapper { max-width: 680px; margin: 30px auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,53,148,0.12); }
+  .header { background: linear-gradient(135deg, #003594 0%, #0055c8 100%); padding: 40px 40px 32px; position: relative; overflow: hidden; }
+  .header::after { content: '2K'; position: absolute; right: -10px; top: -20px; font-size: 160px; font-weight: 900; color: rgba(255,255,255,0.06); letter-spacing: -10px; }
+  .header-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 700; line-height: 1.3; }
+  .header p { color: rgba(255,255,255,0.75); font-size: 15px; margin-top: 8px; }
+  .intro { padding: 36px 40px 24px; border-bottom: 1px solid #eef2f7; }
+  .intro p { font-size: 15.5px; line-height: 1.75; color: #2d3748; }
+  .intro strong { color: #003594; }
+  .section { padding: 28px 40px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #0055c8; margin-bottom: 18px; }
+  .time-block { background: linear-gradient(135deg, #003594 0%, #0055c8 100%); border-radius: 14px; padding: 28px; text-align: center; margin-bottom: 20px; }
+  .time-block .big-num { font-size: 72px; font-weight: 900; color: #fff; line-height: 1; }
+  .time-block .big-label { font-size: 18px; color: rgba(255,255,255,0.8); margin-top: 6px; }
+  .show-item { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 1px solid #eef2f7; }
+  .show-item:last-child { border-bottom: none; }
+  .show-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; background: #e8f0ff; }
+  .show-text h4 { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+  .show-text p { font-size: 13px; color: #5a6a85; line-height: 1.6; }
+  .formats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+  .format-btn { background: #f7faff; border: 1.5px solid #dce8ff; border-radius: 10px; padding: 14px 16px; text-align: center; }
+  .format-btn .f-icon { font-size: 24px; margin-bottom: 6px; }
+  .format-btn .f-label { font-size: 13px; font-weight: 600; color: #1a1a2e; }
+  .format-btn .f-sub { font-size: 11px; color: #5a6a85; margin-top: 2px; }
+  .cta { padding: 28px 40px; text-align: center; background: #f7faff; }
+  .cta p { font-size: 15px; color: #2d3748; margin-bottom: 20px; line-height: 1.6; }
+  .cta a { display: inline-block; background: #003594; color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px 36px; border-radius: 30px; letter-spacing: 0.5px; }
+  .footer { padding: 24px 40px; border-top: 1px solid #eef2f7; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-weight: 700; font-size: 15px; color: #1a1a2e; }
+  .footer-contacts { font-size: 13px; color: #5a6a85; text-align: right; line-height: 1.8; }
+  .footer-contacts a { color: #003594; text-decoration: none; }
+  @media (max-width: 560px) {
+    .wrapper { margin: 0; border-radius: 0; }
+    .header, .intro, .section, .cta, .footer { padding-left: 24px; padding-right: 24px; }
+    .formats { grid-template-columns: 1fr 1fr; }
+    .footer { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-contacts { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+      <div class="header-badge">Лист #5 · 05.06.2026</div>
+      <div style="background:#fff; border-radius:8px; padding:7px 9px; display:flex; align-items:center; flex-shrink:0;">
+        <img src="https://2k.company/wp-content/themes/company/img/logo.svg" style="width:38px; height:38px; display:block;">
+      </div>
+    </div>
+    <h1>Прошу 20 хвилин —<br>покажу готовий продукт</h1>
+    <p>Follow-up · Зустріч або дзвінок · Хмельницький</p>
+  </div>
+
+  <div class="intro">
+    <p>Доброго дня, <strong>Миколо Миколайовичу!</strong><br><br>
+    Протягом двох тижнів я надсилав конкретні розробки та ринкові пропозиції. Прошу не роботу — прошу 20 хвилин вашого часу.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">За 20 хвилин покажу</div>
+
+    <div class="time-block">
+      <div class="big-num">20</div>
+      <div class="big-label">хвилин — і ви побачите все</div>
+    </div>
+
+    <div class="show-item">
+      <div class="show-icon">📋</div>
+      <div class="show-text">
+        <h4>Три готові формули з повною документацією</h4>
+        <p>Рецептури, лабораторні протоколи, промислові розрахунки — готово до виробничого розгляду.</p>
+      </div>
+    </div>
+    <div class="show-item">
+      <div class="show-icon">📊</div>
+      <div class="show-text">
+        <h4>Аналіз трьох ніш, відкритих для 2К прямо зараз</h4>
+        <p>Конкурентна карта, цифри росту ринку, конкретні ідеї продуктів під ваші бренди.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="padding-top: 0;">
+    <div class="section-title">Зручний для вас формат</div>
+    <div class="formats">
+      <div class="format-btn">
+        <div class="f-icon">🏢</div>
+        <div class="f-label">Зустріч в офісі</div>
+        <div class="f-sub">Будь-який зручний день</div>
+      </div>
+      <div class="format-btn">
+        <div class="f-icon">📞</div>
+        <div class="f-label">Дзвінок 15 хв</div>
+        <div class="f-sub">+38097484-1187</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <p>Підтвердіть зручний час — і я приїду.</p>
+    <a href="mailto:makel7uk@gmail.com?subject=Підтверджую зустріч — технолог Юрій">Написати відповідь</a>
+  </div>
+
+  <div class="footer">
+    <div class="footer-name">Юрій Володимирович<br><span style="font-weight:400; font-size:13px; color:#5a6a85;">R&D розробник · Косметика та нутрицевтика</span></div>
+    <div class="footer-contacts">
+      📱 +38097484-1187<br>
+      <a href="mailto:makel7uk@gmail.com">makel7uk@gmail.com</a><br>
+      📍 Хмельницький
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

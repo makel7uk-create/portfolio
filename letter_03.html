@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лист #3 — Нова формула під бренд Dallas</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+  .wrapper { max-width: 680px; margin: 30px auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,53,148,0.12); }
+  .header { background: linear-gradient(135deg, #003594 0%, #0055c8 100%); padding: 40px 40px 32px; position: relative; overflow: hidden; }
+  .header::after { content: '2K'; position: absolute; right: -10px; top: -20px; font-size: 160px; font-weight: 900; color: rgba(255,255,255,0.06); letter-spacing: -10px; }
+  .header-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
+  .header h1 { color: #fff; font-size: 26px; font-weight: 700; line-height: 1.3; }
+  .header p { color: rgba(255,255,255,0.75); font-size: 15px; margin-top: 8px; }
+  .intro { padding: 36px 40px 24px; border-bottom: 1px solid #eef2f7; }
+  .intro p { font-size: 15.5px; line-height: 1.75; color: #2d3748; }
+  .intro strong { color: #003594; }
+  .section { padding: 28px 40px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #0055c8; margin-bottom: 18px; }
+  .formula-card { background: #f7faff; border: 1.5px solid #dce8ff; border-radius: 14px; overflow: hidden; }
+  .formula-header { background: linear-gradient(135deg, #1a3a0a 0%, #2d6010 100%); padding: 20px 24px; display: flex; align-items: center; gap: 16px; }
+  .formula-header-icon { width: 52px; height: 52px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; }
+  .formula-header-text h3 { color: #fff; font-size: 18px; font-weight: 700; }
+  .formula-header-text p { color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 4px; }
+  .formula-body { padding: 24px; }
+  .ingredient-row { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid #eef2f7; }
+  .ingredient-row:last-child { border-bottom: none; }
+  .ing-bar-wrap { width: 80px; flex-shrink: 0; }
+  .ing-bar-bg { background: #e8f0ff; border-radius: 4px; height: 8px; }
+  .ing-bar { background: linear-gradient(90deg, #003594, #0055c8); border-radius: 4px; height: 8px; }
+  .ing-pct { font-size: 13px; font-weight: 700; color: #003594; width: 36px; flex-shrink: 0; text-align: right; }
+  .ing-name { flex: 1; }
+  .ing-name strong { font-size: 14px; color: #1a1a2e; display: block; }
+  .ing-name span { font-size: 12px; color: #5a6a85; }
+  .market-box { margin: 0 40px 28px; border: 1.5px solid #dce8ff; border-radius: 12px; padding: 20px 24px; }
+  .market-box h4 { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 12px; }
+  .market-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f4f8; font-size: 13px; }
+  .market-row:last-child { border-bottom: none; }
+  .market-row .competitor { color: #5a6a85; }
+  .market-row .status-yes { color: #1a8a4a; font-weight: 600; }
+  .market-row .status-no { color: #c0392b; font-weight: 600; }
+  .advantage { margin: 0 40px 28px; background: linear-gradient(135deg, #003594 0%, #0055c8 100%); border-radius: 12px; padding: 24px 28px; color: #fff; }
+  .advantage h3 { font-size: 14px; font-weight: 700; margin-bottom: 12px; opacity: 0.85; letter-spacing: 1px; text-transform: uppercase; }
+  .advantage-items { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .adv-item { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 14px; }
+  .adv-item .num { font-size: 24px; font-weight: 900; color: #fff; line-height: 1; }
+  .adv-item .label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+  .cta { padding: 28px 40px; text-align: center; background: #f7faff; }
+  .cta p { font-size: 15px; color: #2d3748; margin-bottom: 20px; line-height: 1.6; }
+  .cta a { display: inline-block; background: #003594; color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 14px 36px; border-radius: 30px; letter-spacing: 0.5px; }
+  .footer { padding: 24px 40px; border-top: 1px solid #eef2f7; display: flex; justify-content: space-between; align-items: center; }
+  .footer-name { font-weight: 700; font-size: 15px; color: #1a1a2e; }
+  .footer-contacts { font-size: 13px; color: #5a6a85; text-align: right; line-height: 1.8; }
+  .footer-contacts a { color: #003594; text-decoration: none; }
+  @media (max-width: 560px) {
+    .wrapper { margin: 0; border-radius: 0; }
+    .header, .intro, .section, .market-box, .cta, .footer { padding-left: 24px; padding-right: 24px; }
+    .advantage { margin: 0 24px 28px; }
+    .advantage-items { grid-template-columns: 1fr 1fr; }
+    .footer { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-contacts { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+      <div class="header-badge">Лист #3 · 29.05.2026</div>
+      <div style="background:#fff; border-radius:8px; padding:7px 9px; display:flex; align-items:center; flex-shrink:0;">
+        <img src="https://2k.company/wp-content/themes/company/img/logo.svg" style="width:38px; height:38px; display:block;">
+      </div>
+    </div>
+    <h1>Нова формула<br>під бренд Dallas</h1>
+    <p>Ринкова ніша · Готова рецептура · Промислове виробництво</p>
+  </div>
+
+  <div class="intro">
+    <p>Доброго дня, <strong>Миколо Миколайовичу!</strong><br><br>
+    Я проаналізував асортимент Dallas і помітив незайняту нішу: шампунь для пошкодженого волосся з біотином, кератином та пантенолом у сегменті 50–80 грн/250 мл. Конкуренти займають цю полицю — у Dallas такого продукту немає.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Розроблена рецептура</div>
+    <div class="formula-card">
+      <div class="formula-header">
+        <div class="formula-header-icon">🧴</div>
+        <div class="formula-header-text">
+          <h3>Dallas Keratin Repair Shampoo</h3>
+          <p>Для пошкодженого та хімічно обробленого волосся</p>
+        </div>
+      </div>
+      <div class="formula-body">
+        <div class="ingredient-row">
+          <div class="ing-pct">68%</div>
+          <div class="ing-bar-wrap"><div class="ing-bar-bg"><div class="ing-bar" style="width:68%"></div></div></div>
+          <div class="ing-name"><strong>Aqua purificata</strong><span>Основа</span></div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ing-pct">12%</div>
+          <div class="ing-bar-wrap"><div class="ing-bar-bg"><div class="ing-bar" style="width:12%"></div></div></div>
+          <div class="ing-name"><strong>Sodium Laureth Sulfate</strong><span>Мийна основа</span></div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ing-pct">6%</div>
+          <div class="ing-bar-wrap"><div class="ing-bar-bg"><div class="ing-bar" style="width:6%"></div></div></div>
+          <div class="ing-name"><strong>Cocamidopropyl Betaine</strong><span>Бережний підсилювач піни</span></div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ing-pct">1%</div>
+          <div class="ing-bar-wrap"><div class="ing-bar-bg"><div class="ing-bar" style="width:1%"></div></div></div>
+          <div class="ing-name"><strong>Hydrolyzed Keratin</strong><span>Відновлення структури волосся</span></div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ing-pct">0.5%</div>
+          <div class="ing-bar-wrap"><div class="ing-bar-bg"><div class="ing-bar" style="width:0.5%"></div></div></div>
+          <div class="ing-name"><strong>D-Panthenol</strong><span>Зволоження та пружність</span></div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ing-pct">0.5%</div>
+          <div class="ing-bar-wrap"><div class="ing-bar-bg"><div class="ing-bar" style="width:0.5%"></div></div></div>
+          <div class="ing-name"><strong>Niacinamide</strong><span>Живлення кореня</span></div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ing-pct">0.01%</div>
+          <div class="ing-bar-wrap"><div class="ing-bar-bg"><div class="ing-bar" style="width:0.1%"></div></div></div>
+          <div class="ing-name"><strong>Biotin</strong><span>Активатор росту</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="market-box">
+    <h4>Аналіз ринку — полиця 50–80 грн</h4>
+    <div class="market-row"><span class="competitor">Gliss Kur Total Repair</span><span class="status-yes">Є на полиці ✓</span></div>
+    <div class="market-row"><span class="competitor">Elseve Extraordinary Oil</span><span class="status-yes">Є на полиці ✓</span></div>
+    <div class="market-row"><span class="competitor">Pantene Repair&Protect</span><span class="status-yes">Є на полиці ✓</span></div>
+    <div class="market-row"><span style="color:#1a1a2e; font-weight:700;">Dallas (кератин/біотин)</span><span class="status-no">Відсутній ✗</span></div>
+  </div>
+
+  <div class="advantage">
+    <h3>Готово до передачі у виробництво</h3>
+    <div class="advantage-items">
+      <div class="adv-item">
+        <div class="num">✓</div>
+        <div class="label">Повна рецептура з відсотками</div>
+      </div>
+      <div class="adv-item">
+        <div class="num">✓</div>
+        <div class="label">Лабораторний протокол (500 г)</div>
+      </div>
+      <div class="adv-item">
+        <div class="num">✓</div>
+        <div class="label">Розрахунок на партію 100 кг</div>
+      </div>
+      <div class="adv-item">
+        <div class="num">✓</div>
+        <div class="label">Постачальники інгредієнтів</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <p>Готовий надати повну документацію для оцінки вашим виробничим відділом.<br>Формула адаптована під промислове виробництво.</p>
+    <a href="mailto:makel7uk@gmail.com?subject=Відповідь на пропозицію технолога">Написати відповідь</a>
+  </div>
+
+  <div class="footer">
+    <div class="footer-name">Юрій Володимирович<br><span style="font-weight:400; font-size:13px; color:#5a6a85;">R&D розробник · Косметика та нутрицевтика</span></div>
+    <div class="footer-contacts">
+      📱 +38097484-1187<br>
+      <a href="mailto:makel7uk@gmail.com">makel7uk@gmail.com</a><br>
+      📍 Хмельницький
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
